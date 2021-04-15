@@ -1,1 +1,3 @@
 # wheatherAppReactNativeRedux
+
+expo start --web
