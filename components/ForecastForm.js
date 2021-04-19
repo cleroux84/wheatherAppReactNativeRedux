@@ -18,7 +18,6 @@ class ForecastForm extends Component {
                         underlineColorAndroid="transparent"
                         value={this.props.value}
                     />
-                
                 </View>
             </View>
         )}

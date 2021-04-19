@@ -10,7 +10,6 @@ const ForecastTitle = ({title, date}) =>
               }]}>
                 <Text style={styles.nameCity}>{title}</Text>
                 <Text style={styles.date}>{moment(date).format('ddd Do MMM')}</Text> 
-               <Text></Text>
             </View>
         )
 

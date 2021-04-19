@@ -34,7 +34,6 @@ export const fetchForecast = (city) => {
         dispatch(toggleLoader(false));
        /* console.log(forecast) */
         dispatch(updateForecast(forecast));
-        console.log(forecast)
         dispatch(clearInput());
     }
 };

@@ -11,10 +11,11 @@ class Forecast extends Component {
    render(){
      
         return (
-            (this.props.forecast && Object.keys(this.props.forecast).length === 0)?
-                <View>
+            (this.props.forecast && Object.keys(this.props.forecast).length === 0)
+                ?
                     <Button onPress={() => this.props.fetchLocation()} title="test" ></Button>                  
-                </View> : 
+                : 
+                (this.props.forecast.location)?
                 <View>
                     <ForecastTitle 
                         title={this.props.forecast.location.name} 
@@ -32,8 +33,17 @@ class Forecast extends Component {
                                 onSubmitEditing={(event) => this.props.fetchForecast(event.nativeEvent.text)}
                                 onChangeText= {(text) => {this.props.updateInput(text)}}
                                 value={this.props.inputValue} />  
-                            : <h1>It is loading</h1>}
-                     
+                            : <Text>It is loading</Text>}
+                </View>
+                :
+                <View>
+                    <Text>Aucune ville trouvée, réessayer : </Text>
+                     {!this.props.loader ? 
+                            <ForecastForm 
+                                onSubmitEditing={(event) => this.props.fetchForecast(event.nativeEvent.text)}
+                                onChangeText= {(text) => {this.props.updateInput(text)}}
+                                value={this.props.inputValue} />  
+                            : <Text>It is loading</Text>}
                 </View>
         )
             
@@ -52,7 +62,6 @@ const mapDispatchToProps = (dispatch) => {
         fetchForecast,
         updateInput,
         fetchLocation
-
     }, dispatch)
 }
 

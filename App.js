@@ -10,7 +10,7 @@ import { useFonts } from 'expo-font';
 
 export default function App() {
   const [loaded] = useFonts({
-    ArchivoBlack: require('./font/ArchivoBlack-Regular.ttf'),
+    Montserrat: require('./font/Montserrat-Black.ttf'),
   });
   
   if (!loaded) {
@@ -19,7 +19,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <Text style={{ fontFamily: 'ArchivoBlack', fontSize: 30 }}>
+        <Text style={{ fontFamily: 'Montserrat', fontSize: 30, color: 'white' }}>
           <Forecast />
         </Text>
         <StatusBar style="auto" />

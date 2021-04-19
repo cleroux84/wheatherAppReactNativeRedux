@@ -6,26 +6,25 @@ class ForecastTitle extends Component {
         return (
             <View>
                 <View style={[styles.container, {
-                    flexDirection: "colomn",
+                    flexDirection: "column",
+                    flexWrap: 'wrap',
                     alignItems: 'center'
                 }]}>
                     <View style={[styles.container, {
                     flexDirection: "row",
                     alignItems: 'center'
                 }]}>
-                        <Text style={styles.weatherIcon}>
-                            <Image 
-                                style={{width: 100, height: 100, borderRadius: 10}} 
-                                source={{uri: this.props.weather_icon}}
-                            />
-                        </Text>
+                        <Image 
+                            style={{width: 100, height: 100, borderRadius: 10, marginLeft: 30}} 
+                            source={{uri: this.props.weather_icon}}
+                        />
                         <Text style={styles.weatherDescriptions}>
                             {this.props.weather_descriptions}  
                         </Text>
                     </View>
                     <View>
                         <View style={[styles.container, {
-                    flexDirection: "colomn",
+                    flexDirection: "column",
                     alignItems: 'center'
                 }]}>
                             <View style={[styles.containerTemp, {
@@ -37,10 +36,10 @@ class ForecastTitle extends Component {
                                 </Text>
                                 <View style={styles.minMax}>
                                     <Text>
-                                        min ?
+                                        min {this.props.temperature + 4}°C
                                     </Text>
                                     <Text>
-                                        max ?
+                                        max {this.props.temperature - 4}°C
                                     </Text>
                                 </View>
                             </View>
@@ -49,27 +48,27 @@ class ForecastTitle extends Component {
                 </View>
                 <View style={[styles.windAndHumidity, {
                     flexDirection: "row",
-                    alignSelf: 'center'
+                    alignSelf: 'center',
                 }]}>
                     <View style={ {
                     flexDirection: "row",
-                    alignSelf: 'center'
+                    alignSelf: 'center',
                 }}>
                         <View style={{
                         flexDirection: "row",
                         alignSelf: 'center',
-                        paddingLeft: 10
+                        paddingLeft: 10, 
                     }}>
-                            <Image  style={{width: 30, height: 30}}  source= {require('../icons/wind_icon.png')} />
-                            <Text style={{paddingLeft: 10}}>{this.props.wind_speed}km/h</Text>
+                            <Image  style={{width: 40, height: 30}}  source= {require('../icons/wind_icon.png')} />
+                            <Text style={{paddingLeft: 5, color:'white'}}>{this.props.wind_speed}km/h</Text>
                         </View>
                         <View style={{
                         flexDirection: "row",
                         alignSelf: 'center',
-                        paddingLeft: 20
+                        paddingLeft: 30
                     }}>
                             <Image  style={{width: 30, height: 30}}  source= {require('../icons/water_icon.png')} />
-                            <Text>{this.props.humidity}%</Text>
+                            <Text style={{color:'white'}}>{this.props.humidity}%</Text>
                         </View>
                     </View>
                 </View>
@@ -84,12 +83,12 @@ const styles = StyleSheet.create({
        backgroundColor: 'white',
        marginTop: 50,
        borderRadius: 10
-    
     },
     weatherDescriptions: {
         color: 'darkslateblue',
         fontWeight: 'bold',
         fontSize: 30,
+        width: 200,
         marginLeft: 20,
         /* flexWrap: 'wrap' */
     },
