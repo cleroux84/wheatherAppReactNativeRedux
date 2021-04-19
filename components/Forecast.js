@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import { Button, Text, View, Image, TextInput, StyleSheet } from 'react-native';
-import {fetchForecast, updateInput} from '../actions/forecastActions';
+import {fetchForecast, updateInput, fetchLocation} from '../actions/forecastActions';
 import ForecastTitle from './ForecastTitle';
 import ForecastResult from './ForecastResult';
 import ForecastForm from './ForecastForm';
@@ -13,7 +13,7 @@ class Forecast extends Component {
         return (
             (this.props.forecast && Object.keys(this.props.forecast).length === 0)?
                 <View>
-                    <Button onPress={() => this.props.fetchForecast("lyon")} title="test" ></Button>                  
+                    <Button onPress={() => this.props.fetchLocation()} title="test" ></Button>                  
                 </View> : 
                 <View>
                     <ForecastTitle 
@@ -50,7 +50,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         fetchForecast,
-        updateInput
+        updateInput,
+        fetchLocation
 
     }, dispatch)
 }
