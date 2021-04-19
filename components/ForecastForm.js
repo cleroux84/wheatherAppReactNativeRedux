@@ -11,11 +11,12 @@ class ForecastForm extends Component {
                         style={styles.ImageStyle}
                     />
                     <TextInput 
+                        onChangeText={this.props.onChangeText}
                         onSubmitEditing={this.props.onSubmitEditing}
                         style={{ flex: 1 }}
                         placeholder="Rechercher une ville"
                         underlineColorAndroid="transparent"
-                        /* value={this.props.value} */
+                        value={this.props.value}
                     />
                 
                 </View>

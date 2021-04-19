@@ -1,7 +1,7 @@
 let initialState = {
     forecast: {},
-    loader: false
-  /*   inputTextValue : '' */
+    loader: false,
+    inputValue : '',
   }
 
 const forecastReducer = (state = initialState, action) => {
@@ -10,13 +10,23 @@ const forecastReducer = (state = initialState, action) => {
           return {
             ...state,
             forecast: action.forecast,
-           /*  inputTextValue: state.inputTextValue */
+            inputValue : '',
           };
       case 'UPDATE_LOADER':
           return {
             ...state,
             loader: action.status
           };
+      case 'CLEAR_INPUT':
+      return {
+        ...state,
+        inputValue: action.inputValue
+      };
+      case 'UPDATE_INPUT':
+        return {
+          ...state,
+          inputValue: action.inputValue
+        };
       default :
           return state;
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import { Button, Text, View, Image, TextInput, StyleSheet } from 'react-native';
-import {fetchForecast} from '../actions/forecastActions';
+import {fetchForecast, updateInput} from '../actions/forecastActions';
 import ForecastTitle from './ForecastTitle';
 import ForecastResult from './ForecastResult';
 import ForecastForm from './ForecastForm';
@@ -27,8 +27,12 @@ class Forecast extends Component {
                         wind_speed={this.props.forecast.current.wind_speed}
                         humidity= {this.props.forecast.current.humidity}
                         />
-                        {!this.props.loader ? <ForecastForm onSubmitEditing={(event) => this.props.fetchForecast(event.nativeEvent.text)} /* value={this.props.inputTextValue} */ /> 
-                         : <h1>It is loading</h1>}
+                        {!this.props.loader ? 
+                            <ForecastForm 
+                                onSubmitEditing={(event) => this.props.fetchForecast(event.nativeEvent.text)}
+                                onChangeText= {(text) => {this.props.updateInput(text)}}
+                                value={this.props.inputValue} />  
+                            : <h1>It is loading</h1>}
                      
                 </View>
         )
@@ -39,13 +43,14 @@ class Forecast extends Component {
 const mapStateToProps = (state) => {
     return {
        forecast: state.forecast,
-      /*  inputTextValue : state.inputTextValue  */
+       inputValue : state.inputValue
     }
   }
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         fetchForecast,
+        updateInput
 
     }, dispatch)
 }
