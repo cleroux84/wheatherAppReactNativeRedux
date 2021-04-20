@@ -17,11 +17,11 @@ const forecastReducer = (state = initialState, action) => {
             ...state,
             loader: action.status
           };
-      case 'CLEAR_INPUT':
+ /*      case 'CLEAR_INPUT':
       return {
         ...state,
         inputValue: action.inputValue
-      };
+      }; */
       case 'UPDATE_INPUT':
         return {
           ...state,
