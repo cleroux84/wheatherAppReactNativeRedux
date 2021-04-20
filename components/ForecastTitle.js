@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
     container: {
         alignItems:'center',
         justifyContent:'center',
+        flex: 1,
+
         /* position: 'absolute' */
     },
     nameCity: {

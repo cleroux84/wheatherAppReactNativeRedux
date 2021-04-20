@@ -8,13 +8,11 @@ import ForecastResult from './ForecastResult';
 import ForecastForm from './ForecastForm';
 
 class Forecast extends Component {
-   render(){
-     
+    componentDidMount() {
+        this.props.fetchLocation()
+    }
+    render(){
         return (
-            (this.props.forecast && Object.keys(this.props.forecast).length === 0)
-                ?
-                    <Button onPress={() => this.props.fetchLocation()} title="test" ></Button>                  
-                : 
                 (this.props.forecast.location)?
                 <View>
                     <ForecastTitle 

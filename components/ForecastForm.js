@@ -7,7 +7,7 @@ class ForecastForm extends Component {
             <View>
                 <View style={styles.inputView}>
                     <Image
-                        source={require('../icons/search_icon.png')} 
+                        source={require('../assets/images/search_icon.png')} 
                         style={styles.ImageStyle}
                     />
                     <TextInput 

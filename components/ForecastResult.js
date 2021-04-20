@@ -7,6 +7,7 @@ class ForecastTitle extends Component {
             <View>
                 <View style={[styles.container, {
                     flexDirection: "column",
+                    flex: 1,
                     flexWrap: 'wrap',
                     alignItems: 'center'
                 }]}>
@@ -49,6 +50,7 @@ class ForecastTitle extends Component {
                 <View style={[styles.windAndHumidity, {
                     flexDirection: "row",
                     alignSelf: 'center',
+                    flex: 1
                 }]}>
                     <View style={ {
                     flexDirection: "row",
@@ -59,7 +61,7 @@ class ForecastTitle extends Component {
                         alignSelf: 'center',
                         paddingLeft: 10, 
                     }}>
-                            <Image  style={{width: 40, height: 30}}  source= {require('../icons/wind_icon.png')} />
+                            <Image  style={{width: 40, height: 30}}  source= {require('../assets/images/wind_icon.png')} />
                             <Text style={{paddingLeft: 5, color:'white'}}>{this.props.wind_speed}km/h</Text>
                         </View>
                         <View style={{
@@ -67,7 +69,7 @@ class ForecastTitle extends Component {
                         alignSelf: 'center',
                         paddingLeft: 30
                     }}>
-                            <Image  style={{width: 30, height: 30}}  source= {require('../icons/water_icon.png')} />
+                            <Image  style={{width: 30, height: 30}}  source= {require('../assets/images/water_icon.png')} />
                             <Text style={{color:'white'}}>{this.props.humidity}%</Text>
                         </View>
                     </View>
@@ -81,8 +83,9 @@ class ForecastTitle extends Component {
 const styles = StyleSheet.create({
     container: {
        backgroundColor: 'white',
-       marginTop: 50,
-       borderRadius: 10
+       marginTop: 90,
+       borderRadius: 10,
+       margin: 15,
     },
     weatherDescriptions: {
         color: 'darkslateblue',

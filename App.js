@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 import Forecast from './components/Forecast';
@@ -10,7 +10,7 @@ import { useFonts } from 'expo-font';
 
 export default function App() {
   const [loaded] = useFonts({
-    Montserrat: require('./font/Montserrat-Black.ttf'),
+    Montserrat: require('./assets/fonts/Montserrat-Black.ttf'),
   });
   
   if (!loaded) {
@@ -19,9 +19,11 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <Text style={{ fontFamily: 'Montserrat', fontSize: 30, color: 'white' }}>
-          <Forecast />
-        </Text>
+        <ImageBackground source={require('./assets/images/background.jpg')} style={styles.image}>
+          <Text style={{ fontFamily: 'Montserrat', fontSize: 30, color: 'white' }}>
+            <Forecast />
+          </Text>
+         </ImageBackground>
         <StatusBar style="auto" />
 
       </View>
@@ -32,9 +34,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#343a40' ,
+    /* backgroundColor: '#343a40' , */
     color: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    flex: 1
+  }
 });

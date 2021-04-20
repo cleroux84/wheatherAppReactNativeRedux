@@ -32,7 +32,6 @@ export const fetchForecast = (city) => {
         const response = await fetch ('http://api.weatherstack.com/current?access_key=46469cff65186cad32f237adaa90e388&query='+ city);
         const forecast = await response.json();
         dispatch(toggleLoader(false));
-       /* console.log(forecast) */
         dispatch(updateForecast(forecast));
         dispatch(clearInput());
     }
