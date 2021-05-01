@@ -4,12 +4,13 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 class ForecastTitle extends Component {
     render() {
         return (
-            <View>
+            <View >
                 <View style={[styles.container, {
-                    flexDirection: "column",
-                    flex: 1,
+                    /* flexDirection: "column", */
+                    /* flex: 1, */
                     flexWrap: 'wrap',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    
                 }]}>
                     <View style={[styles.container, {
                     flexDirection: "row",
@@ -25,21 +26,27 @@ class ForecastTitle extends Component {
                     </View>
                     <View>
                         <View style={[styles.container, {
-                    flexDirection: "column",
-                    alignItems: 'center'
+                    /* flexDirection: "column",
+                    alignItems: 'center' */
                 }]}>
                             <View style={[styles.containerTemp, {
                     flexDirection: "row",
-                    alignItems: 'flex-start'
+                   /*  alignItems: 'flex-start' */
                 }]}>
                                 <Text style={styles.temperature}>
                                     {this.props.temperature}°C
                                 </Text>
                                 <View style={styles.minMax}>
-                                    <Text>
+                                    <Text style={{color: 'dimgray', fontFamily: 'Montserrat', fontSize: 20}}>
                                         min {this.props.temperature + 4}°C
                                     </Text>
-                                    <Text>
+                                    <View
+                                    style={{
+                                        borderBottomColor: 'dimgray',
+                                        borderBottomWidth: 4,
+                                    }}
+                                    />
+                                    <Text style={{color: 'dimgray', fontFamily: 'Montserrat',  fontSize: 20}}>
                                         max {this.props.temperature - 4}°C
                                     </Text>
                                 </View>
@@ -49,12 +56,13 @@ class ForecastTitle extends Component {
                 </View>
                 <View style={[styles.windAndHumidity, {
                     flexDirection: "row",
+                    justifyContent: "center",
                     alignSelf: 'center',
-                    flex: 1
+                   /*  flex: 1 */
                 }]}>
                     <View style={ {
                     flexDirection: "row",
-                    alignSelf: 'center',
+                   /*  alignSelf: 'center', */
                 }}>
                         <View style={{
                         flexDirection: "row",
@@ -62,7 +70,7 @@ class ForecastTitle extends Component {
                         paddingLeft: 10, 
                     }}>
                             <Image  style={{width: 40, height: 30}}  source= {require('../assets/images/wind_icon.png')} />
-                            <Text style={{paddingLeft: 5, color:'white'}}>{this.props.wind_speed}km/h</Text>
+                            <Text style={{fontFamily: 'Montserrat', paddingLeft: 5, color:'white', fontSize: 20}}>{this.props.wind_speed}km/h</Text>
                         </View>
                         <View style={{
                         flexDirection: "row",
@@ -70,7 +78,7 @@ class ForecastTitle extends Component {
                         paddingLeft: 30
                     }}>
                             <Image  style={{width: 30, height: 30}}  source= {require('../assets/images/water_icon.png')} />
-                            <Text style={{color:'white'}}>{this.props.humidity}%</Text>
+                            <Text style={{fontFamily: 'Montserrat', color:'white', fontSize: 20}}>{this.props.humidity}%</Text>
                         </View>
                     </View>
                 </View>
@@ -79,7 +87,6 @@ class ForecastTitle extends Component {
         )
     }
 }
-
 const styles = StyleSheet.create({
     container: {
        backgroundColor: 'white',
@@ -91,34 +98,30 @@ const styles = StyleSheet.create({
         color: 'darkslateblue',
         fontWeight: 'bold',
         fontSize: 30,
-        width: 200,
         marginLeft: 20,
-        /* flexWrap: 'wrap' */
+        fontFamily: 'Montserrat',
+        
     },
     temperature: {
         color: 'darkslateblue',
         fontWeight: 'bold',
         fontSize: 55,
         margin: 20,
+        fontFamily: 'Montserrat'
     },
     minMax: {
-        color: 'grey',
-        marginTop: 30,
-        fontSize: 17,
-    },
-    containerTemp: {
-        marginBottom: 30
+        justifyContent: 'center',
     },
     windAndHumidity: {
         backgroundColor: 'darkslateblue',
         color: 'white',
-        fontSize: 15,
-        width: 200,
+        width: '80%',
         height: 50,
         borderRadius: 10,
         position: 'absolute',
         bottom: -25,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontFamily: 'Montserrat'
     }
   });
 

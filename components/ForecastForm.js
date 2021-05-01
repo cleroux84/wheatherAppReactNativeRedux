@@ -13,7 +13,7 @@ class ForecastForm extends Component {
                     <TextInput 
                         onChangeText={this.props.onChangeText}
                         onSubmitEditing={this.props.onSubmitEditing}
-                        style={{ flex: 1 }}
+                        style={{ fontFamily: 'Montserrat', fontSize: 20 }}
                         placeholder="Rechercher une ville"
                         underlineColorAndroid="transparent"
                         value={this.props.value}
@@ -31,16 +31,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderWidth: 0.5,
         borderColor: '#000',
-        height: 50,
+        height: 75,
         borderRadius: 10,
-        margin: 10,
-        marginTop: 50
+        margin: 20,
+        marginTop: 50,
+        fontFamily: 'Montserrat'
     },
     ImageStyle: {
         padding: 10,
         margin: 5,
-        height: 25,
-        width: 25,
+        height: 50,
+        width: 50,
         resizeMode: 'stretch',
         alignItems: 'center',
     }

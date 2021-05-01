@@ -18,28 +18,22 @@ export default function App() {
   }
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <ImageBackground source={require('./assets/images/background.jpg')} style={styles.image}>
-          <Text style={{ fontFamily: 'Montserrat', fontSize: 30, color: 'white' }}>
+    {/*   <View style={styles.container}>
+        <Text style={{ fontFamily: 'Montserrat', fontSize: 30, color: 'white' }}> */}
             <Forecast />
-          </Text>
-         </ImageBackground>
+      {/*   </Text>
         <StatusBar style="auto" />
 
-      </View>
+      </View> */}
     </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     /* backgroundColor: '#343a40' , */
-    color: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+   /*  color: '#fff', */
+/*     alignItems: 'center',
+    justifyContent: 'center', */
   },
-  image: {
-    flex: 1
-  }
 });

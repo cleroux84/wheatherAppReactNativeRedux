@@ -7,7 +7,7 @@ import 'moment/locale/fr'
 const ForecastTitle = ({title, date}) => 
          (
             <View style={[styles.container, {
-                flexDirection: "column"
+                /* flexDirection: "column", */
               }]}>
                 <ForecastChosenCity title = {title}/>
                 <Text style={styles.date}>{moment(date).format('ddd Do MMM')}</Text> 
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
     date: {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 30,
+        fontSize: 25,
+        fontFamily: 'Montserrat'
     }
   });
 

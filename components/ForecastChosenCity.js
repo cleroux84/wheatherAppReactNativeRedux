@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
     nameCity: {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 40,
+        fontSize: 50,
+        fontFamily: 'Montserrat'
     },
 })
 
