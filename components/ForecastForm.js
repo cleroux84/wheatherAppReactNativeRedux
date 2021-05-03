@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, TextInput, Button } from 'react-native';
+import { View, Image, StyleSheet, TextInput } from 'react-native';
 
 class ForecastForm extends Component {
     render() {
@@ -20,7 +20,8 @@ class ForecastForm extends Component {
                     />
                 </View>
             </View>
-        )}
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -47,4 +48,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default ForecastForm
+export default ForecastForm;

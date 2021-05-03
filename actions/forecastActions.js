@@ -35,6 +35,6 @@ export const fetchForecast = (city) => {
         dispatch(updateForecast(forecast));
         dispatch(clearInput());
     }
-};
+}
 
   

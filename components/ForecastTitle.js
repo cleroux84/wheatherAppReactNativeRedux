@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ForecastChosenCity from './ForecastChosenCity';
 import moment from "moment"; 
@@ -18,9 +18,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems:'center',
         justifyContent:'center',
-        flex: 1,
-
-        /* position: 'absolute' */
+        flex: 1
     },
    
     date: {
