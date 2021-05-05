@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-class ForecastTitle extends Component {
+class ForecastResult extends Component {
     render() {
         return (
             <View >
@@ -143,4 +143,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default ForecastTitle;
+export default ForecastResult;
