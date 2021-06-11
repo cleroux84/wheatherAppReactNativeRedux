@@ -13,6 +13,7 @@ class Forecast extends Component {
     }
     render(){
         return (
+            //si une adresse est trouvée affichage du rendu de l'api
             (this.props.forecast.location)
             ? <View >
                 <ImageBackground source={require('../assets/images/background.jpg')} resizeMode='cover' style={{width: '100%', height: '100%'}}>
@@ -36,6 +37,7 @@ class Forecast extends Component {
                             : <Text>It is loading</Text>}
                 </ImageBackground>
             </View>
+            //si aucune adresse n'est trouvée, affichage d'une barre de recherche
             : <View>
                 <ImageBackground source={require('../assets/images/background.jpg')} style={{width: '100%', height: '100%'}}>
                     <Text>Aucune ville trouvée, réessayer : </Text>

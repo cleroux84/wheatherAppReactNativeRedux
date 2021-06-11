@@ -1,7 +1,7 @@
 let initialState = {
-    forecast: {},
-    loader: false,
-    inputValue : ''
+      forecast: {},
+      loader: false,
+      inputValue : ''
   }
 
 const forecastReducer = (state = initialState, action) => {
