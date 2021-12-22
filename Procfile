@@ -1,1 +1,1 @@
-web: expo start --web
+web: node server.js
